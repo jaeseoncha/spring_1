@@ -1,24 +1,37 @@
 package hello.core.order;
 
+import hello.core.AppConfig;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
-    MemberService memberService =new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
-
-    @Test
-    void createorder(){
-        Long memberId =1L;
-        Member member = new Member(memberId,"memberA", Grade.VIP);
-        memberService.join(member);
-
-        Order order =orderService.createOrder(memberId,"itemA",10000);
-        System.out.println(order);
-        System.out.println(order.calculatePrice());
-
-    }}
+		
+		MemberService memberService;
+		
+		OrderService orderService;
+		
+		@BeforeEach
+		public void beforEach() {
+				AppConfig appConfig = new AppConfig();
+				memberService = appConfig.memberService();
+				orderService = appConfig.orderService();
+		}
+		
+		
+		@Test
+		void createorder() {
+				Long memberId = 1L;
+				Member member = new Member( memberId, "memberA", Grade.VIP );
+				memberService.join( member );
+				
+				Order order = orderService.createOrder( memberId, "itemA", 10000 );
+				System.out.println( order );
+				System.out.println( order.calculatePrice() );
+				
+		}
+}

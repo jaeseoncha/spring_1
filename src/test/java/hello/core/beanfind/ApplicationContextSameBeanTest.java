@@ -19,11 +19,11 @@ public class ApplicationContextSameBeanTest {
 		
 		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext( SameBeanConfig.class );
 		
-		@Test
-		@DisplayName( "타입으로 조회시 같은타입이 둘이상있으면 오류남" )
-		void findAllBean(){
-			Assertions.assertThrows( NoUniqueBeanDefinitionException.class , ()-> ac.getBean( SameBeanConfig.class ) );
-		}
+//		@Test
+//		@DisplayName( "타입으로 조회시 같은타입이 둘이상있으면 오류남" )
+//		void findAllBean(){
+//			Assertions.assertThrows( NoUniqueBeanDefinitionException.class , ()-> ac.getBean( SameBeanConfig.class ) );
+//		}
 		@Test
 		@DisplayName( "타입으로 조회시 같은 타입이 둘 이상 있으면 , 빈이름을 지정하면된다." )
 		void findAllBea2n(){

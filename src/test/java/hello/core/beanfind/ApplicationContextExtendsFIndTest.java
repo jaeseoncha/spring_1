@@ -19,11 +19,11 @@ public class ApplicationContextExtendsFIndTest {
 		
 		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext( TestConfig.class );
 		
-		@Test
-		@DisplayName( "부모타입으로조회시 자식이 둘이사있으면 중복오류가 발생한다." )
-		void findTest(){
-				DiscountPolicy bean = ac.getBean( DiscountPolicy.class );
-		}
+//		@Test
+//		@DisplayName( "부모타입으로조회시 자식이 둘이사있으면 중복오류가 발생한다." )
+//		void findTest(){
+//				DiscountPolicy bean = ac.getBean( DiscountPolicy.class );
+//		}
 		
 		
 		@Test

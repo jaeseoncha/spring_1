@@ -22,17 +22,17 @@ class RateDiscountPolicyTest {
         // then
         Assertions.assertThat(discount).isEqualTo(1000);
     }
-    @Test
-    @DisplayName("vip아니면 10프로할인적용되면안된다")
-    void vip_x(){
-        //givne
-        Member member =new Member(1L ,"memberBasic", Grade.BASIC);
-        //when
-        int discount = discountPolicy.discount(member,10000);
-
-        // then
-        Assertions.assertThat(discount).isEqualTo(1000);
-    }
+//    @Test
+//    @DisplayName("vip아니면 10프로할인적용되면안된다")
+//    void vip_x(){
+//        //givne
+//        Member member =new Member(1L ,"memberBasic", Grade.BASIC);
+//        //when
+//        int discount = discountPolicy.discount(member,10000);
+//
+//        // then
+//        Assertions.assertThat(discount).isEqualTo(1000);
+//    }
 
 
 

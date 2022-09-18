@@ -1,5 +1,8 @@
 package hello.core.lifeCycle;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class NetworkClient {
 
     private String url;
@@ -19,9 +22,21 @@ public class NetworkClient {
     }
 
     public void call(String message){
-        System.out.println("url = " + url+"msg"+message);
+        System.out.println("url = " + url);
     }
     public void disconnect(){
         System.out.println("close"+url);
     }
-}
+
+    @PostConstruct
+    public void init(){
+        System.out.println("init");
+        connect();
+    }
+    @PreDestroy
+    public void close(){
+        System.out.println("close");
+
+        disconnect();
+
+    }}
